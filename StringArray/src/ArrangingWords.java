@@ -5,7 +5,7 @@ public class ArrangingWords {
 
 	public static void main(String[] args) {
      
-		String stmt= "this is a easiest example";      //Initializes and declared String variable with name "stmt(statement)"
+		String stmt= "this is a easiest example of spli string";      //Initializes and declared String variable with name "stmt(statement)"
         
 		String[] arr1=stmt.split(" ");              //Initializing String array arr1 to store the value of stmt after split
 		
