@@ -27,6 +27,7 @@ abstract class Account                    //abstract class Account(Parent class)
 		Scanner sc=new Scanner(System.in);
 	  System.out.print("Enter Amount to deposit : ");     //depositing amount in account
 	  int depo_amt=sc.nextInt();
+	  
 	  bal=bal+depo_amt;
 	  
 	  if(bal>1000)
@@ -72,6 +73,7 @@ abstract class Account                    //abstract class Account(Parent class)
 		  System.out.print("Enter Amount to deposit : ");      //depositing amount in account
 		  int depo_amt=sc.nextInt();
 		  bal=bal+depo_amt;
+		  System.out.println("Amount has been deposited and now balance is : "+bal);
 		 } 
 		
 		public void widrawAmount()              //abstract method body
@@ -86,35 +88,89 @@ abstract class Account                    //abstract class Account(Parent class)
 
  }
 	
-public class AccBalance {              //class name AccBalance
+    
+ public class AccBalance {              //class name AccBalance
 
 	public static void main(String[] args)      //main() class
 	{    
 		Scanner sc=new Scanner(System.in);
-		Account a=new CurrentAc();              //created object for Account class
+		CurrentAc c=new CurrentAc();              //created object for Account class
+		SavingAc s=new SavingAc();
 		int ch;
-		
+		String sa;
 		System.out.print("PRESS 1 FOR (Current Account) and PRESS 2 FOR (Saving Account) :");
-		ch=sc.nextInt();                     //asking user to enter choice to use current or saving account
-		switch(ch)
+		ch=sc.nextInt();                           //asking user to enter choice to use current or saving account
+		
+		
+		if(ch==1)                   //checking user's choice
 		{
-		case 1: System.out.println("---Current Account---");
-		                                                  //choice 1 for Current Account
+		  
+		         System.out.println("---Current Account---");
+		   
+		         System.out.println("What would you like to do....?");       //asking user to choice what he/she would like to do
+		   
+		         System.out.println("a. Check Balance-");
+		   
+		         System.out.println("b. Deposit Amount");
+		   
+		         System.out.println("c. Withdraw Amount");
+		   
+		         System.out.println("PRESS a , b or c");
+		   
+	              sa=sc.next();
+		   
+		switch(sa)
+		{
+		case "a": c.getBalance();
+		           break;                                      
 		      
-		        a.getBalance();
-                a.depositeAmount();
-                a.widrawAmount();
+		        
+		case "b" :c.depositeAmount();
+                   break;
                 
-                break;
-		case 2:  System.out.println("---Saving Account---"); 
-		            a.getBalance();                        //choice 2 for Saving Account
-                    a.depositeAmount();
-                    a.widrawAmount();
-                    
-                    break;
-                    
-        default:   System.out.print("---!!! Entered Wrong Choice---");            
-		}     //ENF_OF_SWITCH
+		case "c":  c.widrawAmount();
+			        break;
+			
+			
+			
+			
+        }     //ENF_OF_INNER_SWITCH
+		
+		}
+		else
+		{
+		
+		  System.out.println("---Saving Account---");
+		   
+        System.out.println("What would you like to do....?");
+  
+        System.out.println("a. Check Balance-");
+  
+        System.out.println("b. Deposit Amount");
+  
+        System.out.println("c. Withdraw Amount");
+  
+        System.out.println("PRESS a , b or c");
+  
+        sa=sc.next();
+  
+        switch(sa)
+      {
+          case "a": s.getBalance();
+          break;                                       //choice 1 for Current Account
+     
+       
+          case "b" :s.depositeAmount();
+          break;
+       
+          case "c":  s.widrawAmount();
+	        break;
+	
+          	
+	
+	  }          //ENF_OF_INNER_SWITCH
+       
+		
+		}         //ENF_OF_ELSE
 	}
-
 }           //END_OF_PROGRAM
