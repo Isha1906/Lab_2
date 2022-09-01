@@ -94,8 +94,8 @@ abstract class Account                    //abstract class Account(Parent class)
 	public static void main(String[] args)      //main() class
 	{    
 		Scanner sc=new Scanner(System.in);
-		CurrentAc c=new CurrentAc();              //created object for Account class
-		SavingAc s=new SavingAc();
+		CurrentAc c=new CurrentAc();              //created object for CurrentAc class
+		SavingAc s=new SavingAc();                //created object for SavingAc class
 		int ch;
 		String sa;
 		System.out.print("PRESS 1 FOR (Current Account) and PRESS 2 FOR (Saving Account) :");
